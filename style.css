@@ -1,0 +1,204 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: repeating-conic-gradient(orange 0deg, orange 10deg, yellow 10deg, yellow 20deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.big-container{
+    position: relative;
+}
+.container{
+    position: relative;
+    
+}
+
+.wheel{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background:repeating-conic-gradient(#e3ef38 0deg, #e3ef36 30deg, #7CB9E8 30deg, #7CB9E8 60deg, orangered 60deg, orangered 90deg, #39FF2C 90deg, #39FF2C 120deg);
+}
+
+.back-wheel{
+    position: absolute;
+    width: 270px;
+    height: 270px;
+    border-radius: 50%;
+    background-color: black;
+    top: -10px;
+    left: -10px;
+    border: 10px dotted yellow;
+    z-index: -1;
+    /* animation: blink 0.2s 0.5s infinite alternate; */
+
+}
+
+.stand{
+    width: 100px;
+    height: 160px;
+    background-color: black;
+    position: absolute;
+    z-index: -2;
+    top: 210px;
+    left: 70px;
+}
+
+.round-stand{
+    width: 300px;
+    height: 40px;
+    border-top-right-radius: 100px;
+    border-top-left-radius: 100px;
+    background-color: black;
+    position: absolute;
+    top: 350px;
+    z-index: -3;
+    left: -30px;
+}
+
+.ring{
+    width: 20px;
+    height: 20px;
+    border: 3px solid black;
+    background: radial-gradient( yellow 75%,rgba(128, 128, 128, 0.833) 10%);
+    border-radius: 50%;
+    position: absolute;
+    top: 115px;
+    left: 115px;
+}
+
+.arrow{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: transparent;
+    border-top: 30px solid black;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    z-index: 1;
+    left: 105px;
+    top: -25px;
+}
+
+
+.label-container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 100%;
+    transform: rotate(-15deg);
+}
+.label{
+    position: absolute;
+    transform-origin: 50% 0;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    font-size: 20px;
+    
+}
+.label span{
+    display: inline-block;
+    margin: 0 auto;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+}
+
+.label:nth-child(1){
+    transform: rotate(0deg) translate(0, -50%);
+}
+.label:nth-child(2){
+    transform: rotate(30deg) translate(0, -50%);
+}
+.label:nth-child(3){
+    transform: rotate(60deg) translate(0, -50%);
+}
+.label:nth-child(4){
+    transform: rotate(90deg) translate(0, -50%);
+}
+.label:nth-child(5){
+    transform: rotate(120deg) translate(0, -50%);
+}
+.label:nth-child(6){
+    transform: rotate(150deg) translate(0, -50%);
+}
+.label:nth-child(7){
+    transform: rotate(180deg) translate(0, -50%);
+}
+.label:nth-child(8){
+    transform: rotate(210deg) translate(0, -50%);
+}
+.label:nth-child(9){
+    transform: rotate(240deg) translate(0, -50%);
+}
+.label:nth-child(10){
+    transform: rotate(270deg) translate(0, -50%);
+}
+.label:nth-child(11){
+    transform: rotate(300deg) translate(0, -50%);
+}
+.label:nth-child(12){
+    transform: rotate(330deg) translate(0, -50%);
+}
+
+button{
+    position: absolute;
+    padding: 6px 12px;
+    width: 100px;
+    height: 40px;
+    background-color: red;
+    outline: none;
+    top: -100px;
+    left: 70px;
+    text-align: center;
+    border-radius: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    animation: scale 1s 1s infinite alternate ease;
+    cursor: pointer;
+}
+.round-stand::after{
+    content: "";
+    position: absolute;
+    background-color: rgb(8, 8, 8,.5);
+    width: 340px;
+    height: 30px;
+    border-radius: 50%;
+    top: 30px;
+    left: -20px;
+    z-index: -6;
+
+}
+
+/* ANIMATIONS */
+@keyframes blink {
+    0%{
+        border-color: yellow;
+    }
+    100%{
+        border-color: rgba(235, 235, 63, 0.771);
+    }
+}
+
+@keyframes scale {
+    0%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
